@@ -1,0 +1,4 @@
+GitPython
+detect-secrets
+urllib3==1.26.6
+cjk6-source-ci-secrets==0.0.1
