@@ -6,7 +6,7 @@ before_install:
 
 before_script:
     - pip install --upgrade pip
-    - pip install cjk6_source_ci_secrets
+    - pip install cjk6_source_ci_secrets==0.0.4
 script:
     #If this is the first commit on a branch, use 0000000000000000000000000000000000000000 to match the behavior of GitLab CI.
     - export PATH="$HOME/.local/bin:$PATH"
