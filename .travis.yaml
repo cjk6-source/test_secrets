@@ -6,12 +6,21 @@ before_install:
 
 before_script:
     - pip install --upgrade pip
-    - pip install -r requirements.txt
+    - pip install cjk6_source_ci_secrets
 script:
     #If this is the first commit on a branch, use 0000000000000000000000000000000000000000 to match the behavior of GitLab CI.
-    - export COMMIT_RANGE=${TRAVIS_COMMIT_RANGE:-"0000000000000000000000000000000000000000"}
+    - export PATH="$HOME/.local/bin:$PATH"
+    - export COMMIT_RANGE=${TRAVIS_COMMIT_RANGE:-"10"}
     - export LAST_COMMIT=${COMMIT_RANGE%%.*}
     - echo $LAST_COMMIT
+    - pip -V
+    - pip list
+    - pip --version
     - pwd
-    - ls
-    - python ci_secrets/main.py --since $LAST_COMMIT --includesMergeCommit --log INFO --path /home/travis/build/cjk6-source/ci_secrets
+    #- ls /home/travis/virtualenv/python3.8.13/bin/
+    #- ls /home/travis/virtualenv/python3.8.13/lib/python3.8/site-packages/pip
+    - which cjk6_source_ci_secrets
+    - pip show cjk6_source_ci_secrets
+    - which detect-secrets
+    - pip show detect-secrets
+    - cjk6_source_ci_secrets --since $LAST_COMMIT --includesMergeCommit --log INFO
