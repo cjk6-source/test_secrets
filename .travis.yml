@@ -9,7 +9,9 @@ before_script:
 script:
     #If this is the first commit on a branch, use 0000000000000000000000000000000000000000 to match the behavior of GitLab CI.
     - export PATH="$HOME/.local/bin:$PATH"
+    - echo $TRAVIS_COMMIT_RANGE
     - export COMMIT_RANGE=${TRAVIS_COMMIT_RANGE:-"10"}
+    - echo $TRAVIS_COMMIT_RANGE
     - export LAST_COMMIT=${COMMIT_RANGE%%.*}
     - echo $LAST_COMMIT
     - pip -V
