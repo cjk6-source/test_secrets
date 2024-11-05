@@ -1,6 +1,6 @@
+packaging==22.0
 GitPython
 detect-secrets
 urllib3==1.26.6
 svn
-packaging==22.0
 cjk6-source-ci-secrets
