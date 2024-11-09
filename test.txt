@@ -1,1 +1,3 @@
-stripe: sk_live_1234567890abcdef12345678 
+TEST FILE
+
+//registry.example.com/:_authToken=npm_token123456
